@@ -3,68 +3,275 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarvar Khamidov's Portfolio</title>
+    <title>Portfolio - Desktop</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <header>
-        <h1>Sarvar Khamidov's Portfolio</h1>
-    </header>
-    <nav>
-        <a href="#about-me">About Me</a>
-        <a href="#projects">Projects</a>
-        <a href="#blog">Blog</a>
-        <a href="#photo-gallery">Photo Gallery</a>
-        <a href="#contact">Contact</a>
-    </nav>
-    <div class="container">
-        <section id="about-me" class="section about-me">
-            <h2>About Me</h2>
-            <p>My name is Sarvar Khamidov. I'm a graduate of Penn State University with a Bachelor of Science in Data Science and a current graduate student in NYU Biostatistics. I am passionate about leveraging data to uncover insights and drive decision-making.</p>
-        </section>
-        <section id="projects" class="section projects">
-            <h2>Projects</h2>
-            <div class="project">
-                <h3>Project Title 1</h3>
-                <p>Description of Project 1.</p>
-                <!-- <img src="path_to_image1.jpg" alt="Project 1"> -->
+    <!-- Desktop Container -->
+    <div class="desktop" id="desktop">
+        <!-- Menu Bar -->
+        <div class="menu-bar">
+            <div class="menu-left">
+                <span class="menu-name">Sarvar</span>
+                <span class="menu-item">File</span>
+                <span class="menu-item">View</span>
+                <span class="menu-item">Help</span>
             </div>
-            <div class="project">
-                <h3>Project Title 2</h3>
-                <p>Description of Project 2.</p>
-                <!-- <img src="path_to_image2.jpg" alt="Project 2"> -->
+            <div class="menu-right">
+                <div class="status-icon wifi-icon" title="Wi-Fi">📶</div>
+                <div class="status-icon battery-icon" title="Battery">🔋</div>
+                <div class="status-icon clock-icon" id="clock" title="Time"></div>
             </div>
-            <!-- Add more projects as needed -->
-        </section>
-        <section id="blog" class="section blog">
-            <h2>Blog</h2>
-            <article>
-                <h3>Blog Post Title 1</h3>
-                <p>Excerpt from Blog Post 1.</p>
-                <a href="#">Read more</a>
-            </article>
-            <article>
-                <h3>Blog Post Title 2</h3>
-                <p>Excerpt from Blog Post 2.</p>
-                <a href="#">Read more</a>
-            </article>
-            <!-- Add more blog posts as needed -->
-        </section>
-        <!-- <section id="photo-gallery" class="section photo-gallery">
-            <h2>Photo Gallery</h2>
-            <img src="path_to_photo1.jpg" alt="Photo 1">
-            <img src="path_to_photo2.jpg" alt="Photo 2"> -->
-            <!-- Add more photos as needed -->
-        <!-- </section> -->
-        <section id="contact" class="section contact">
-            <h2>Contact</h2>
-            <form action="https://formspree.io/f/mleqvzvp" method="POST">
-                <input type="text" name="name" placeholder="Your Name" required>
-                <input type="email" name="email" placeholder="Your Email" required>
-                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
-                <button type="submit">Send Message</button>
-            </form>
-        </section>
+        </div>
+
+        <!-- Desktop Icons -->
+        <div class="desktop-icons">
+            <div class="desktop-column folder-column">
+                <div class="desktop-icon folder-icon" data-folder="games">
+                    <div class="icon-image">📁</div>
+                    <div class="icon-label">Games</div>
+                </div>
+                <div class="desktop-icon folder-icon" data-folder="work">
+                    <div class="icon-image">📁</div>
+                    <div class="icon-label">Work</div>
+                </div>
+            </div>
+            <div class="desktop-column">
+                <div class="desktop-icon" data-app="about">
+                    <div class="icon-image">👤</div>
+                    <div class="icon-label">About Me</div>
+                </div>
+                <div class="desktop-icon" data-app="resume">
+                    <div class="icon-image">📄</div>
+                    <div class="icon-label">Resume</div>
+                </div>
+                <div class="desktop-icon" data-app="projects">
+                    <div class="icon-image">💼</div>
+                    <div class="icon-label">Projects</div>
+                </div>
+                <div class="desktop-icon" data-app="contact">
+                    <div class="icon-image">📧</div>
+                    <div class="icon-label">Contact</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Windows -->
+        <!-- About Me Window -->
+        <div class="window" id="window-about" data-app="about">
+            <div class="window-titlebar" data-draggable="true">
+                <div class="window-controls">
+                    <button class="control-btn close-btn" data-action="close"></button>
+                    <button class="control-btn minimize-btn" data-action="minimize"></button>
+                    <button class="control-btn maximize-btn" data-action="maximize"></button>
+                </div>
+                <div class="window-title">About Me</div>
+            </div>
+            <div class="window-content">
+                <div class="about-content">
+                    <div class="profile-section">
+                        <h2>Sarvar Khamidov</h2>
+                        <p class="title">Data Scientist</p>
+                        <p class="intro">
+                            Welcome to my portfolio! I'm a passionate data scientist with expertise in machine learning, 
+                            data visualization, and statistical analysis. I love turning complex data into actionable insights.
+                        </p>
+                    </div>
+                    <div class="care-about-section">
+                        <h3>What I care about</h3>
+                        <ul>
+                            <li>Building impactful data-driven solutions</li>
+                            <li>Continuous learning and experimentation</li>
+                            <li>Collaboration and knowledge sharing</li>
+                            <li>Ethical AI and responsible data practices</li>
+                        </ul>
+                    </div>
+                    <div class="status-section">
+                        <p class="current-status">Current status: <strong>Open to new roles / Freelancing / Building cool stuff</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Window -->
+        <div class="window" id="window-projects" data-app="projects">
+            <div class="window-titlebar" data-draggable="true">
+                <div class="window-controls">
+                    <button class="control-btn close-btn" data-action="close"></button>
+                    <button class="control-btn minimize-btn" data-action="minimize"></button>
+                    <button class="control-btn maximize-btn" data-action="maximize"></button>
+                </div>
+                <div class="window-title">Projects</div>
+            </div>
+            <div class="window-content scrollable">
+                <div class="projects-content">
+                    <div class="project-card">
+                        <h3>Computer Vision for soccer analysis</h3>
+                        <p class="project-description">Building a computer vision model that detects and tracks soccer objects—such as players, ball, and goalposts—in match footage to analyze player movements, ball possession, and key events. The resulting detections can be used to generate statistics like heatmaps, passing patterns, or defensive shape over time.</p>
+                        <div class="project-tags">
+                            <span class="tag">YOLO</span>
+                            <span class="tag">Pytorch</span>
+                            <span class="tag">Video Processing</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>RAG App for Technical Documentation</h3>
+                        <p class="project-description">Another project description highlighting key features and technologies used.</p>
+                        <div class="project-tags">
+                            <span class="tag">Python</span>
+                            <span class="tag">Machine Learning</span>
+                            <span class="tag">API</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Title 3</h3>
+                        <p class="project-description">A data visualization project that showcases interactive dashboards and insights.</p>
+                        <div class="project-tags">
+                            <span class="tag">React</span>
+                            <span class="tag">D3.js</span>
+                            <span class="tag">Data Analysis</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                    <div class="project-card">
+                        <h3>Project Title 4</h3>
+                        <p class="project-description">An end-to-end ML pipeline from data collection to model deployment.</p>
+                        <div class="project-tags">
+                            <span class="tag">TensorFlow</span>
+                            <span class="tag">Docker</span>
+                            <span class="tag">Cloud</span>
+                        </div>
+                        <a href="#" class="project-link">View Project</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resume Window -->
+        <div class="window" id="window-resume" data-app="resume">
+            <div class="window-titlebar" data-draggable="true">
+                <div class="window-controls">
+                    <button class="control-btn close-btn" data-action="close"></button>
+                    <button class="control-btn minimize-btn" data-action="minimize"></button>
+                    <button class="control-btn maximize-btn" data-action="maximize"></button>
+                </div>
+                <div class="window-title">Resume</div>
+            </div>
+            <div class="window-content scrollable">
+                <div class="resume-content">
+                    <div class="resume-section">
+                        <h2>Experience</h2>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Sept 2025 - Present</div>
+                            <div class="timeline-content">
+                                <h3>AI Engineer</h3>
+                                <p class="company">AbbVie</p>
+                                <p>Worked on building agentic RAG systems for statistical team workflow.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Jan 2025 - Present</div>
+                            <div class="timeline-content">
+                                <h3>ML Researcher</h3>
+                                <p class="company">Feng Lab</p>
+                                <p>Evaluated lightweight CNNs, ResNet variants, and multimodal models (CLIP, Qwen-VL) on TinyImageNet to optimize accuracy-efficiency trade-offs, and fine-tuned CLIPs ViT-B/32 for a +10% gain over zero-shot performance.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">Summer 2025</div>
+                            <div class="timeline-content">
+                                <h3>Programmer Intern</h3>
+                                <p class="company">Regeneron</p>
+                                <p>Developed diagnostic and validation software that improved quality control and data integrity across 10+ Regeneron Medidata EDC clinical studies and optimized compliance tools for 15+ database builds.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-section">
+                        <h2>Education</h2>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2024 - 2026</div>
+                            <div class="timeline-content">
+                                <h3>Master of Science in Biostatistics</h3>
+                                <p class="company">New York University</p>
+                                <p>Specialized in machine learning and statistical analysis.</p>
+                            </div>
+                        </div>
+                        <div class="timeline-item">
+                            <div class="timeline-date">2014 - 2018</div>
+                            <div class="timeline-content">
+                                <h3>Bachelor of Science in Data Science</h3>
+                                <p class="company">Pennsylvania State University</p>
+                                <p>Focus on algorithms and data structures.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="resume-download">
+                        <a href="#" class="download-btn">Download Resume (PDF)</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Contact Window -->
+        <div class="window" id="window-contact" data-app="contact">
+            <div class="window-titlebar" data-draggable="true">
+                <div class="window-controls">
+                    <button class="control-btn close-btn" data-action="close"></button>
+                    <button class="control-btn minimize-btn" data-action="minimize"></button>
+                    <button class="control-btn maximize-btn" data-action="maximize"></button>
+                </div>
+                <div class="window-title">Contact</div>
+            </div>
+            <div class="window-content">
+                <div class="contact-content">
+                    <div class="contact-item">
+                        <strong>Email:</strong>
+                        <a href="mailto:sk10583@nyu.edu">sk10583@nyu.edu</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>Location:</strong>
+                        <span>New York, NY (Open to relocate)</span>
+                    </div>
+                    <div class="contact-item">
+                        <strong>GitHub:</strong>
+                        <a href="https://github.com/khsarvar" target="_blank">github.com/khsarvar1</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>LinkedIn:</strong>
+                        <a href="https://linkedin.com/in/sarvarkhamidov" target="_blank">linkedin.com/in/sarvarkhamidov</a>
+                    </div>
+                    <div class="contact-item">
+                        <strong>X (Twitter):</strong>
+                        <a href="https://twitter.com/sarvar_khamidov" target="_blank">@sarvar_khamidov</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dock -->
+        <div class="dock">
+            <div class="dock-icon" data-app="about" title="About Me">
+                <div class="dock-icon-image">👤</div>
+            </div>
+            <div class="dock-icon" data-app="projects" title="Projects">
+                <div class="dock-icon-image">💼</div>
+            </div>
+            <div class="dock-icon" data-app="resume" title="Resume">
+                <div class="dock-icon-image">📄</div>
+            </div>
+            <div class="dock-icon" data-app="contact" title="Contact">
+                <div class="dock-icon-image">📧</div>
+            </div>
+            <div class="dock-separator"></div>
+            <div class="dock-icon trash-icon" title="Trash">
+                <div class="dock-icon-image">🗑️</div>
+            </div>
+        </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
-<
+</html>
+
