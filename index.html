@@ -56,6 +56,28 @@
             </div>
         </div>
 
+        <!-- Sticky Note -->
+        <div class="sticky-note" aria-label="Welcome instructions">
+            <h3>Welcome!</h3>
+            <p>Thanks for dropping by my interactive desktop.</p>
+            <ul>
+                <li>Double-click icons to open the window you're curious about.</li>
+                <li>Use the dock at the bottom to reopen or switch between windows.</li>
+                <li>Drag any window by its title bar to arrange your workspace.</li>
+            </ul>
+            <p class="sticky-note-footer">Explore freely &mdash; more updates are coming!</p>
+        </div>
+
+        <!-- Welcome Popup Overlay -->
+        <div class="welcome-popup-backdrop" id="welcome-popup" role="dialog" aria-modal="true">
+            <div class="welcome-popup">
+                <p class="welcome-popup-eyebrow">New here?</p>
+                <h3>Quick Tour</h3>
+                <p>Double-click a desktop icon to open a window, drag it by its title bar, and use the dock to reopen minimized apps. It behaves just like a real desktop.</p>
+                <p class="welcome-popup-hint">Click anywhere to start exploring.</p>
+            </div>
+        </div>
+
         <!-- Windows -->
         <!-- About Me Window -->
         <div class="window" id="window-about" data-app="about">
@@ -274,4 +296,3 @@
     <script src="script.js"></script>
 </body>
 </html>
-

@@ -60,6 +60,19 @@ class WindowManager {
         
         // Open About Me window by default
         this.openWindow('about');
+
+        // Show welcome popup overlay
+        this.showWelcomePopup();
+    }
+
+    showWelcomePopup() {
+        const popupBackdrop = document.getElementById('welcome-popup');
+        if (!popupBackdrop) return;
+
+        popupBackdrop.classList.add('visible');
+        popupBackdrop.addEventListener('click', () => {
+            popupBackdrop.classList.remove('visible');
+        }, { once: true });
     }
 
     setupWindowControls() {
