@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarvar Khamidov</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -37,8 +38,7 @@
                     <p>Before that, at <a href="https://nyulangone.org" target="_blank" rel="noopener">NYU Langone</a> I built modeling pipelines for wearable physiological time-series and developed early-signal classifiers for cognitive decline. At <a href="https://www.regeneron.com" target="_blank" rel="noopener">Regeneron</a> I built diagnostic software for clinical data quality review.</p>
                     <p>I've also done ML research at the Feng Lab, evaluating CNNs and multimodal models like CLIP and Qwen-VL on image classification benchmarks.</p>
                     <p>Outside of those roles, I founded <a href="https://acadylearn.com" target="_blank" rel="noopener">AcadyLearn</a> — an AI app that turns uploaded documents into quizzes and flashcards, built end-to-end with LLM workflows and AWS infrastructure.</p>
-                    <p>I also built a computer vision system for soccer match analysis — tracking players, ball, and goalposts to generate heatmaps and possession stats. More projects on <a href="https://github.com/khsarvar" target="_blank" rel="noopener">GitHub</a>.</p>
-                    <p>Currently finishing an MS in Biostatistics at <a href="https://publichealth.nyu.edu" target="_blank" rel="noopener">NYU</a>. Open to what's next.</p>
+                    <p>I also built an agentic workspace for public health data exploration at a hackathon — LLM-driven loops for profiling, cleaning, and analysis with CDC/Socrata integration. More projects on <a href="https://github.com/khsarvar" target="_blank" rel="noopener">GitHub</a>.</p>
                 </div>
             </section>
 
@@ -102,16 +102,31 @@
             <!-- Projects -->
             <section id="projects" class="tab-panel" role="tabpanel">
                 <div class="project-card">
-                    <h3>COVID-19 Case Fatality Rate Analysis</h3>
-                    <p class="project-desc">How did COVID-19 mortality risk vary across U.S. states over time? Calculated monthly CFR for all 50 states using NYT surveillance data, then visualized trends with faceted line plots and choropleth maps. CFR declined nationally across 2020–2023, with northeastern states peaking highest early in the pandemic.</p>
+                    <h3>Visual Science QA via QLoRA Fine-Tuning of SmolVLM-500M</h3>
+                    <p class="project-desc">Can a 500M-parameter vision-language model be meaningfully fine-tuned for K–8 science MCQ under strict hardware constraints (5M trainable params, free-tier T4 GPU)? Applied QLoRA with four staged ablations covering rank, alpha, target modules, and scoring method. Reached 0.875 public leaderboard accuracy, up from a 0.819 baseline — with a key finding that LoRA alpha interacts with module scope: raising alpha hurts attention-only adapters but helps when MLP projections are also included.</p>
                     <div class="tags">
-                        <span class="tag">R</span>
-                        <span class="tag">ggplot2</span>
-                        <span class="tag">dplyr</span>
-                        <span class="tag">Maps</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">QLoRA</span>
+                        <span class="tag">Vision-Language</span>
+                        <span class="tag">Fine-Tuning</span>
                     </div>
                     <div class="project-links">
-                        <a href="files/Statistical_Programming_R.pdf" target="_blank" rel="noopener" class="project-link">View Report →</a>
+                        <a href="files/SmolVLM_QLoRA_ScienceQA.pdf" target="_blank" rel="noopener" class="project-link">Paper →</a>
+                        <a href="https://github.com/khsarvar/Pixels-to-Prediction" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>HealthLab Agent</h3>
+                    <p class="project-desc">An agentic workspace for public health data exploration built at a hackathon. Users upload CSVs or pull datasets directly from the CDC/Socrata catalog, then run LLM-driven loops for profiling, cleaning, and analysis — generating charts, statistics, and Markdown reports. Integrates PubMed to surface relevant literature alongside the data findings.</p>
+                    <div class="tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">Next.js</span>
+                        <span class="tag">Pydantic-AI</span>
+                        <span class="tag">Agentic</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/khsarvar/scsp-hackathon" target="_blank" rel="noopener" class="project-link">GitHub →</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -128,27 +143,16 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Music Listening Behaviors as Predictors of Depression</h3>
-                    <p class="project-desc">Do the genres you listen to predict how depressed you feel? Built a multiple linear regression model on 728 respondents from the MxMH Survey (Kaggle) using genre frequencies and demographics as predictors. The model explained 18.2% of variance in depression scores; age was protective, Classical listening was positively associated with depression, and Country showed a significant negative association.</p>
+                    <h3>Depression, Antihypertensives, and Uncontrolled Hypertension</h3>
+                    <p class="project-desc">Does antihypertensive medication use change how depression affects blood pressure control? Modeled the interaction using multivariable logistic regression and random forest on 39,467 NHANES participants (2005–2020) with survey-weighted analyses. Among medicated patients, each unit increase in depression score raised the odds of uncontrolled hypertension (aOR: +0.04, 95% CI: 0.02–0.06); logistic regression slightly outperformed random forest on AUC (0.79 vs. 0.78).</p>
                     <div class="tags">
                         <span class="tag">R</span>
-                        <span class="tag">Linear Regression</span>
-                        <span class="tag">Mental Health</span>
+                        <span class="tag">Epidemiology</span>
+                        <span class="tag">Logistic Regression</span>
+                        <span class="tag">NHANES</span>
                     </div>
                     <div class="project-links">
-                        <a href="files/Music_Depression_Regression.pdf" target="_blank" rel="noopener" class="project-link">View Report →</a>
-                    </div>
-                </div>
-                <div class="project-card">
-                    <h3>Large-Scale Psychometric Evaluation of the Big Five Personality Measure</h3>
-                    <p class="project-desc">Does the open-source 50-item Big Five test hold up at scale? Evaluated reliability and validity using a 100,000-observation random sample from 1M+ international respondents (2016–2018). Cronbach's alpha ranged from 0.79–0.89 across all five traits, exploratory factor analysis with parallel analysis reproduced the expected five-factor structure, and low inter-trait correlations confirmed divergent validity.</p>
-                    <div class="tags">
-                        <span class="tag">Stata</span>
-                        <span class="tag">Psychometrics</span>
-                        <span class="tag">Factor Analysis</span>
-                    </div>
-                    <div class="project-links">
-                        <a href="files/BigFive_Psychometrics.docx" target="_blank" rel="noopener" class="project-link">View Report →</a>
+                        <a href="files/Hypertension_Depression_Manuscript.pdf" target="_blank" rel="noopener" class="project-link">View Manuscript →</a>
                     </div>
                 </div>
                 <div class="project-card">
@@ -165,17 +169,40 @@
                     </div>
                 </div>
                 <div class="project-card">
-                    <h3>Visual Science QA via QLoRA Fine-Tuning of SmolVLM-500M</h3>
-                    <p class="project-desc">Can a 500M-parameter vision-language model be meaningfully fine-tuned for K–8 science MCQ under strict hardware constraints (5M trainable params, free-tier T4 GPU)? Applied QLoRA with four staged ablations covering rank, alpha, target modules, and scoring method. Reached 0.875 public leaderboard accuracy, up from a 0.819 baseline — with a key finding that LoRA alpha interacts with module scope: raising alpha hurts attention-only adapters but helps when MLP projections are also included.</p>
+                    <h3>Large-Scale Psychometric Evaluation of the Big Five Personality Measure</h3>
+                    <p class="project-desc">Does the open-source 50-item Big Five test hold up at scale? Evaluated reliability and validity using a 100,000-observation random sample from 1M+ international respondents (2016–2018). Cronbach's alpha ranged from 0.79–0.89 across all five traits, exploratory factor analysis with parallel analysis reproduced the expected five-factor structure, and low inter-trait correlations confirmed divergent validity.</p>
                     <div class="tags">
-                        <span class="tag">Python</span>
-                        <span class="tag">QLoRA</span>
-                        <span class="tag">Vision-Language</span>
-                        <span class="tag">Fine-Tuning</span>
+                        <span class="tag">Stata</span>
+                        <span class="tag">Psychometrics</span>
+                        <span class="tag">Factor Analysis</span>
                     </div>
                     <div class="project-links">
-                        <a href="files/SmolVLM_QLoRA_ScienceQA.pdf" target="_blank" rel="noopener" class="project-link">Paper →</a>
-                        <a href="https://github.com/khsarvar/Pixels-to-Prediction" target="_blank" rel="noopener" class="project-link">GitHub →</a>
+                        <a href="files/BigFive_Psychometrics.docx" target="_blank" rel="noopener" class="project-link">View Report →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>COVID-19 Case Fatality Rate Analysis</h3>
+                    <p class="project-desc">How did COVID-19 mortality risk vary across U.S. states over time? Calculated monthly CFR for all 50 states using NYT surveillance data, then visualized trends with faceted line plots and choropleth maps. CFR declined nationally across 2020–2023, with northeastern states peaking highest early in the pandemic.</p>
+                    <div class="tags">
+                        <span class="tag">R</span>
+                        <span class="tag">ggplot2</span>
+                        <span class="tag">dplyr</span>
+                        <span class="tag">Maps</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="files/Statistical_Programming_R.pdf" target="_blank" rel="noopener" class="project-link">View Report →</a>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <h3>Music Listening Behaviors as Predictors of Depression</h3>
+                    <p class="project-desc">Do the genres you listen to predict how depressed you feel? Built a multiple linear regression model on 728 respondents from the MxMH Survey (Kaggle) using genre frequencies and demographics as predictors. The model explained 18.2% of variance in depression scores; age was protective, Classical listening was positively associated with depression, and Country showed a significant negative association.</p>
+                    <div class="tags">
+                        <span class="tag">R</span>
+                        <span class="tag">Linear Regression</span>
+                        <span class="tag">Mental Health</span>
+                    </div>
+                    <div class="project-links">
+                        <a href="files/Music_Depression_Regression.pdf" target="_blank" rel="noopener" class="project-link">View Report →</a>
                     </div>
                 </div>
             </section>
