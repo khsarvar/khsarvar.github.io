@@ -20,5 +20,14 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
     });
 });
 
+document.querySelectorAll('[data-tab-link]').forEach(link => {
+    link.addEventListener('click', e => {
+        e.preventDefault();
+        activateTab(link.dataset.tabLink);
+        history.replaceState(null, '', `#${link.dataset.tabLink}`);
+        window.scrollTo(0, 0);
+    });
+});
+
 const hash = location.hash.slice(1);
 if (hash) activateTab(hash);

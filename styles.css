@@ -8,6 +8,7 @@
     --bg:     #FAFAFA;
     --text:   #111111;
     --muted:  #666666;
+    --link:   #0070F3;
     --border: #E5E5E5;
 }
 
@@ -56,14 +57,15 @@ h1 {
 
 .header-right a {
     font-size: 0.875rem;
-    color: var(--muted);
+    color: var(--link);
     text-decoration: none;
     white-space: nowrap;
     transition: color 0.15s;
 }
 
 .header-right a:hover {
-    color: var(--text);
+    text-decoration: underline;
+    text-underline-offset: 3px;
 }
 
 /* Overview */
@@ -72,9 +74,9 @@ h1 {
 }
 
 .overview p {
-    font-size: 1rem;
-    color: #333;
-    line-height: 1.75;
+    font-size: 1.0625rem;
+    color: var(--text);
+    line-height: 1.7;
 }
 
 .overview p + p {
@@ -82,15 +84,13 @@ h1 {
 }
 
 .overview a {
-    color: var(--text);
-    text-decoration: underline;
-    text-decoration-color: #ccc;
-    text-underline-offset: 2px;
-    transition: text-decoration-color 0.15s;
+    color: var(--link);
+    text-decoration: none;
+    text-underline-offset: 3px;
 }
 
 .overview a:hover {
-    text-decoration-color: var(--text);
+    text-decoration: underline;
 }
 
 /* Tab Nav */
@@ -216,13 +216,13 @@ h1 {
 
 .project-link {
     font-size: 0.85rem;
-    color: var(--muted);
+    color: var(--link);
     text-decoration: none;
-    transition: color 0.15s;
+    text-underline-offset: 3px;
 }
 
 .project-link:hover {
-    color: var(--text);
+    text-decoration: underline;
 }
 
 /* Mobile */
